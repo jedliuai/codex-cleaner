@@ -133,6 +133,11 @@ codex-cleaner/
 └── LICENSE
 ```
 
+## 联系方式
+
+- 个人主页: [jedliuai.com](https://jedliuai.com)
+- Email: [ryjedliu@gmail.com](mailto:ryjedliu@gmail.com)
+
 ## License
 
 MIT
