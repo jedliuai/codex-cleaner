@@ -1,5 +1,7 @@
 # Codex Cleaner
 
+[English](README.md) | [中文](README.zh-CN.md)
+
 Codex Cleaner is a tiny safety-first cleanup skill for Codex users who feel their agent workspace is getting heavy, messy, or slow.
 
 It finds the obvious junk, clears the low-risk caches, and leaves the important stuff alone.
