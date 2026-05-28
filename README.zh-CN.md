@@ -79,7 +79,7 @@ powershell -ExecutionPolicy Bypass -File codex-cleaner/scripts/clean_codex.ps1 -
 powershell -ExecutionPolicy Bypass -File codex-cleaner/scripts/clean_codex.ps1 -Apply -IncludeRuntimeCaches
 ```
 
-## 一句话卖点
+## Skill 特点
 
 大多数清理脚本太激进，大多数缓存建议又太模糊。Codex Cleaner 是为真实 AI agent 工作流设计的：保留记忆，保留工具，保留技能，只扫掉可以再生成的杂物。
 

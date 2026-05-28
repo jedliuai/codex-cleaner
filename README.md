@@ -79,7 +79,7 @@ Only if you accept slower future startup or re-downloads:
 powershell -ExecutionPolicy Bypass -File codex-cleaner/scripts/clean_codex.ps1 -Apply -IncludeRuntimeCaches
 ```
 
-## The Pitch
+## Skill Features
 
 Most cleanup scripts are reckless. Most cache advice is vague. Codex Cleaner is built for the actual AI-agent workflow: keep the memory, keep the tools, keep the skills, and sweep the disposable mess.
 
