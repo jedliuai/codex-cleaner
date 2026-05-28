@@ -1,27 +1,54 @@
+<div align="center">
+
 # Codex Cleaner
+
+**A safety-first cleanup skill for Codex workspaces.**
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Skill](https://img.shields.io/badge/Codex-Skill-blue.svg)](codex-cleaner/SKILL.md)
+[![Platform](https://img.shields.io/badge/Platform-Windows%20PowerShell-lightgrey.svg)](codex-cleaner/scripts/clean_codex.ps1)
+[![Safety](https://img.shields.io/badge/Default-Safe%20Mode-brightgreen.svg)](#what-it-protects)
 
 [English](README.md) | [中文](README.zh-CN.md)
 
-Codex Cleaner is a tiny safety-first cleanup skill for Codex users who feel their agent workspace is getting heavy, messy, or slow.
+Clean what can be rebuilt. Keep what makes Codex work.
 
-It finds the obvious junk, clears the low-risk caches, and leaves the important stuff alone.
+</div>
 
-## Why People Want This
+---
 
-AI coding tools generate momentum. They also generate logs, temp files, package caches, driver caches, and one-off workspace clutter.
+## Overview
 
-Codex Cleaner gives your agent a simple rule:
+Codex Cleaner is a small, practical maintenance skill for Codex users who feel their agent workspace is getting heavy, messy, or slow.
 
-> Clean what can be rebuilt. Keep what makes Codex work.
+It finds obvious junk, clears low-risk caches, and preserves the files that matter: sessions, plugins, skills, project code, state databases, and runtime assets.
 
-That means less manual digging through folders, less fear of deleting the wrong thing, and a faster path back to work.
+## Why It Exists
+
+AI coding tools move fast. Over time, they also leave behind logs, temporary files, package-manager caches, browser-driver caches, and one-off workspace clutter.
+
+Codex Cleaner gives your agent a simple, repeatable cleanup workflow without turning maintenance into a risky guessing game.
+
+## At A Glance
+
+| Area | Default Behavior |
+| --- | --- |
+| Old system temp files | Clean |
+| Stale Codex temp files | Clean |
+| pip/npm/yarn/pnpm download caches | Clean |
+| Browser-driver caches | Clean |
+| Codex sessions | Preserve |
+| Codex plugins and skills | Preserve |
+| Codex state databases | Preserve |
+| Project source code and `.git` folders | Preserve |
+| Codex runtime caches | Preserve unless explicitly requested |
 
 ## What It Cleans
 
 - Old system temp files
 - Stale Codex temp files
 - pip, npm, yarn, and pnpm download caches
-- Selenium/browser-driver caches
+- Selenium and browser-driver caches
 - Tiny leftover Codex state temp files
 
 ## What It Protects
@@ -55,25 +82,25 @@ Use Codex Cleaner to safely clean my Codex cache and temp files.
 
 ## Usage
 
-Preview first:
+Preview before cleaning:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File codex-cleaner/scripts/clean_codex.ps1 -DryRun
 ```
 
-Clean safely:
+Run the safe cleanup:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File codex-cleaner/scripts/clean_codex.ps1 -Apply
 ```
 
-Clean older temp files only after a longer delay:
+Clean only older temporary files:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File codex-cleaner/scripts/clean_codex.ps1 -Apply -OlderThanDays 7
 ```
 
-Only if you accept slower future startup or re-downloads:
+Clean runtime caches only when you accept slower future startup or re-downloads:
 
 ```powershell
 powershell -ExecutionPolicy Bypass -File codex-cleaner/scripts/clean_codex.ps1 -Apply -IncludeRuntimeCaches
@@ -81,9 +108,30 @@ powershell -ExecutionPolicy Bypass -File codex-cleaner/scripts/clean_codex.ps1 -
 
 ## Skill Features
 
-Most cleanup scripts are reckless. Most cache advice is vague. Codex Cleaner is built for the actual AI-agent workflow: keep the memory, keep the tools, keep the skills, and sweep the disposable mess.
+| Feature | Why It Matters |
+| --- | --- |
+| Dry-run first | See what would be cleaned before anything changes. |
+| Conservative defaults | Keeps Codex working files and project files safe. |
+| Clear safety boundary | Runtime caches are preserved unless you opt in. |
+| Agent-friendly workflow | Designed to be called naturally from Codex. |
+| Practical cleanup scope | Focuses on temporary files and reusable caches. |
 
-It is not a system optimizer. It is a practical maintenance skill for people building with Codex every day.
+Codex Cleaner is not a system optimizer. It is a focused maintenance skill for people building with Codex every day.
+
+## Repository Structure
+
+```text
+codex-cleaner/
+├── codex-cleaner/
+│   ├── SKILL.md
+│   ├── agents/
+│   │   └── openai.yaml
+│   └── scripts/
+│       └── clean_codex.ps1
+├── README.md
+├── README.zh-CN.md
+└── LICENSE
+```
 
 ## License
 
